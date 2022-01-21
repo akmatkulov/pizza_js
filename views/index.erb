@@ -1,3 +1,11 @@
 <h2>Welcome to Pizza Shop</h2>
-<!-- Contextual button for informational alert messages -->
+
+<div class="row">
+    <% @products.each do |item| %>
+      <div class="col-md-3">
+        <%= item.title %>
+      </div>
+    <% end %>
+</div>
+
 <button type="button" class="btn btn-info btn-lg" onclick="something()">Info</button>
