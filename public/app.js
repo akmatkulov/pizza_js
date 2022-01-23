@@ -11,6 +11,7 @@ function add_to_cart(id)
   alert('Items in your cart: ' + basket());
 
   update_orders();
+  button_orders();
 }
 
 function basket()
@@ -33,6 +34,13 @@ function update_orders()
 {
   var orders = cart_orders();
   $('#id_order').val(orders);
+}
+
+function button_orders()
+{
+  var text = 'Cart (' + basket() + ')';
+  $('#orders_button').val(text);
+
 }
 
 function cart_orders()
