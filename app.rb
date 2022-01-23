@@ -19,5 +19,28 @@ get '/about' do
 end
 
 post '/cart' do
-	erb "Hekuuu"
+	orders_input = params[:orders]
+	@items = pars_order(orders_input)
+
+	@items.each do |item|
+		item[0] = Product.find(item[0])
+	end
+
+	erb :cart
+end
+
+def pars_order orders_input
+  s1 = orders_input.split(/,/)
+  arr = []
+  s1.each do |item|
+    s2 = item.split(/\=/)
+    s3= s2[0].split(/_/)
+    id = s3[1]
+    cnt = s2[1]
+    arr2=[id, cnt]
+    arr.push arr2
+  end
+
+  return arr
+
 end
