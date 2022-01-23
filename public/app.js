@@ -9,6 +9,8 @@ function add_to_cart(id)
   window.localStorage.setItem(key, x)
   // вывод кол-во  items
   alert('Items in your cart: ' + basket());
+
+  update_orders();
 }
 
 function basket()
@@ -27,7 +29,11 @@ function basket()
   return cnt;
 }
 
-
+function update_orders()
+{
+  var orders = cart_orders();
+  $('#id_order').val(orders);
+}
 
 function cart_orders()
 {
