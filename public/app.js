@@ -66,6 +66,8 @@ function cancel_order()
   update_orders();
   button_orders();
 
+  $('#cart').text('Your cart is now empty');
+
 
   return false;
 }
