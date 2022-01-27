@@ -38,7 +38,7 @@ function update_orders()
 
 function button_orders()
 {
-  var text = 'Cart (' + basket() + ')';
+  var text = basket();
   $('#orders_button').val(text);
 
 }
