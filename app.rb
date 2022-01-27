@@ -10,7 +10,12 @@ class Product < ActiveRecord::Base
 end
 
 class Order < ActiveRecord::Base
-end 
+end
+
+post '/place_order' do
+	@order = Order.create params[:order]
+	erb :order_placed
+end
 
 get '/' do
 	@products = Product.all
